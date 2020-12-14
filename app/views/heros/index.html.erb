@@ -1,0 +1,17 @@
+<h1>Marvel Heroes</h1>
+<ul>
+<%@heros.map do |hero|%>
+
+<li><%=link_to hero.name, hero_path(hero)%> 
+<%= button_to "Edit Hero", edit_hero_path(hero)%>
+<%= form_for hero, method: :delete do |f|%>
+<%=f.submit "Delete Hero"%>
+<%end%> <br>
+</li>
+
+<%end%>
+
+
+</ul>
+<%=link_to "Back to Welcome Page", welcome_path%><br><br>
+<%=link_to "Add A New Hero", new_hero_path%>

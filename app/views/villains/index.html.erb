@@ -1,0 +1,20 @@
+<h1>Marvel Villains</h1>
+
+<ul>
+<%@villains.map do |villain|%>
+
+<li><%=link_to villain.name, villain_path(villain)%> 
+<%= button_to "Edit Villain", edit_villain_path(villain)%>
+<%= form_for villain, method: :delete do |f|%>
+<%=f.submit "Delete Villain"%>
+<%end%> <br>
+</li>
+
+<%end%>
+
+
+</ul>
+<%=link_to "Back to Welcome Page", welcome_path%><br><br>
+<%=link_to "Add A New Villain", new_villain_path%><br>
+
+
