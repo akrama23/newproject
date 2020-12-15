@@ -3,5 +3,6 @@
 <%@comics.map do |comic|%>
 <li><%=link_to comic.title, comic_book_path(comic)%></li>
 <%end %>
+
 </ul>
 <%=link_to "Back to Welcome Page", welcome_path%><br><br>
